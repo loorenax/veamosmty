@@ -1,0 +1,952 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3BC40A1-0FE1-4CE9-8935-4ECED56919DB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>veamosmty</RootNamespace>
+    <AssemblyName>veamosmty</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44326</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.9\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.16.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.16.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer, Version=1.5.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.Core.1.5.0.5\lib\net45\HtmlRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.commons.7.2.2\lib\net461\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJSON, Version=0.18.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LitJson.0.18.0\lib\net45\LitJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationBlocks.Data.2.0.0\lib\net45\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="SwiftExcel, Version=1.0.11.0, Culture=neutral, PublicKeyToken=64ef85d6527da537, processorArchitecture=MSIL">
+      <HintPath>..\packages\SwiftExcel.1.0.11\lib\netstandard2.0\SwiftExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assetscustom\b400\bootbox.all.js" />
+    <Content Include="assetscustom\b400\bootbox.all.min.js" />
+    <Content Include="assetscustom\b400\bootbox.js" />
+    <Content Include="assetscustom\b400\bootbox.locales.js" />
+    <Content Include="assetscustom\b400\bootbox.locales.min.js" />
+    <Content Include="assetscustom\b400\bootbox.min.js" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\jquery-3.1.1.js" />
+    <Content Include="assetscustom\b400\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="assetscustom\b400\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="assetscustom\b400\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="assetscustom\b400\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="assetscustom\b400\bootstrap\dist\js\npm.js" />
+    <Content Include="assetscustom\b400\jquery\dist\jquery.js" />
+    <Content Include="assetscustom\b400\jquery\dist\jquery.min.js" />
+    <Content Include="assetscustom\b400\jquery\LICENSE.txt" />
+    <Content Include="assetscustom\b400\tether\tether.min.js" />
+    <Content Include="assetscustom\bootstrap-datetimepicker\css\bootstrap-datetimepicker-standalone.css" />
+    <Content Include="assetscustom\bootstrap-datetimepicker\css\bootstrap-datetimepicker.css" />
+    <Content Include="assetscustom\bootstrap-datetimepicker\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="assetscustom\bootstrap-datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="assetscustom\bootstrap-datetimepicker\js\moment-with-locales.min.js" />
+    <Content Include="assetscustom\bootstrap-datetimepicker\js\moment.min.js" />
+    <Content Include="assetscustom\bt1160\bootstrap-table-locale-all.js" />
+    <Content Include="assetscustom\bt1160\bootstrap-table-locale-all.min.js" />
+    <Content Include="assetscustom\bt1160\bootstrap-table-vue.esm.js" />
+    <Content Include="assetscustom\bt1160\bootstrap-table-vue.esm.min.js" />
+    <Content Include="assetscustom\bt1160\bootstrap-table-vue.js" />
+    <Content Include="assetscustom\bt1160\bootstrap-table-vue.min.js" />
+    <Content Include="assetscustom\bt1160\bootstrap-table.css" />
+    <Content Include="assetscustom\bt1160\bootstrap-table.js" />
+    <Content Include="assetscustom\bt1160\bootstrap-table.min.css" />
+    <Content Include="assetscustom\bt1160\bootstrap-table.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\accent-neutralise\bootstrap-table-accent-neutralise.js" />
+    <Content Include="assetscustom\bt1160\extensions\accent-neutralise\bootstrap-table-accent-neutralise.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\addrbar\bootstrap-table-addrbar.js" />
+    <Content Include="assetscustom\bt1160\extensions\addrbar\bootstrap-table-addrbar.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\auto-refresh\bootstrap-table-auto-refresh.js" />
+    <Content Include="assetscustom\bt1160\extensions\auto-refresh\bootstrap-table-auto-refresh.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\cell-input\bootstrap-table-cell-input.css" />
+    <Content Include="assetscustom\bt1160\extensions\cell-input\bootstrap-table-cell-input.js" />
+    <Content Include="assetscustom\bt1160\extensions\cell-input\bootstrap-table-cell-input.min.css" />
+    <Content Include="assetscustom\bt1160\extensions\cell-input\bootstrap-table-cell-input.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\cookie\bootstrap-table-cookie.js" />
+    <Content Include="assetscustom\bt1160\extensions\cookie\bootstrap-table-cookie.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\copy-rows\bootstrap-table-copy-rows.js" />
+    <Content Include="assetscustom\bt1160\extensions\copy-rows\bootstrap-table-copy-rows.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\defer-url\bootstrap-table-defer-url.js" />
+    <Content Include="assetscustom\bt1160\extensions\defer-url\bootstrap-table-defer-url.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\editable\bootstrap-table-editable.js" />
+    <Content Include="assetscustom\bt1160\extensions\editable\bootstrap-table-editable.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\export\bootstrap-table-export.js" />
+    <Content Include="assetscustom\bt1160\extensions\export\bootstrap-table-export.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\filter-control\bootstrap-table-filter-control.css" />
+    <Content Include="assetscustom\bt1160\extensions\filter-control\bootstrap-table-filter-control.js" />
+    <Content Include="assetscustom\bt1160\extensions\filter-control\bootstrap-table-filter-control.min.css" />
+    <Content Include="assetscustom\bt1160\extensions\filter-control\bootstrap-table-filter-control.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\fixed-columns\bootstrap-table-fixed-columns.css" />
+    <Content Include="assetscustom\bt1160\extensions\fixed-columns\bootstrap-table-fixed-columns.js" />
+    <Content Include="assetscustom\bt1160\extensions\fixed-columns\bootstrap-table-fixed-columns.min.css" />
+    <Content Include="assetscustom\bt1160\extensions\fixed-columns\bootstrap-table-fixed-columns.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\group-by-v2\bootstrap-table-group-by.css" />
+    <Content Include="assetscustom\bt1160\extensions\group-by-v2\bootstrap-table-group-by.js" />
+    <Content Include="assetscustom\bt1160\extensions\group-by-v2\bootstrap-table-group-by.min.css" />
+    <Content Include="assetscustom\bt1160\extensions\group-by-v2\bootstrap-table-group-by.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\i18n-enhance\bootstrap-table-i18n-enhance.js" />
+    <Content Include="assetscustom\bt1160\extensions\i18n-enhance\bootstrap-table-i18n-enhance.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\key-events\bootstrap-table-key-events.js" />
+    <Content Include="assetscustom\bt1160\extensions\key-events\bootstrap-table-key-events.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\mobile\bootstrap-table-mobile.js" />
+    <Content Include="assetscustom\bt1160\extensions\mobile\bootstrap-table-mobile.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\multiple-sort\bootstrap-table-multiple-sort.js" />
+    <Content Include="assetscustom\bt1160\extensions\multiple-sort\bootstrap-table-multiple-sort.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\page-jump-to\bootstrap-table-page-jump-to.css" />
+    <Content Include="assetscustom\bt1160\extensions\page-jump-to\bootstrap-table-page-jump-to.js" />
+    <Content Include="assetscustom\bt1160\extensions\page-jump-to\bootstrap-table-page-jump-to.min.css" />
+    <Content Include="assetscustom\bt1160\extensions\page-jump-to\bootstrap-table-page-jump-to.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\pipeline\bootstrap-table-pipeline.js" />
+    <Content Include="assetscustom\bt1160\extensions\pipeline\bootstrap-table-pipeline.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\print\bootstrap-table-print.js" />
+    <Content Include="assetscustom\bt1160\extensions\print\bootstrap-table-print.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\reorder-columns\bootstrap-table-reorder-columns.js" />
+    <Content Include="assetscustom\bt1160\extensions\reorder-columns\bootstrap-table-reorder-columns.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\reorder-rows\bootstrap-table-reorder-rows.css" />
+    <Content Include="assetscustom\bt1160\extensions\reorder-rows\bootstrap-table-reorder-rows.js" />
+    <Content Include="assetscustom\bt1160\extensions\reorder-rows\bootstrap-table-reorder-rows.min.css" />
+    <Content Include="assetscustom\bt1160\extensions\reorder-rows\bootstrap-table-reorder-rows.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\resizable\bootstrap-table-resizable.js" />
+    <Content Include="assetscustom\bt1160\extensions\resizable\bootstrap-table-resizable.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\sticky-header\bootstrap-table-sticky-header.css" />
+    <Content Include="assetscustom\bt1160\extensions\sticky-header\bootstrap-table-sticky-header.js" />
+    <Content Include="assetscustom\bt1160\extensions\sticky-header\bootstrap-table-sticky-header.min.css" />
+    <Content Include="assetscustom\bt1160\extensions\sticky-header\bootstrap-table-sticky-header.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\toolbar\bootstrap-table-toolbar.js" />
+    <Content Include="assetscustom\bt1160\extensions\toolbar\bootstrap-table-toolbar.min.js" />
+    <Content Include="assetscustom\bt1160\extensions\treegrid\bootstrap-table-treegrid.js" />
+    <Content Include="assetscustom\bt1160\extensions\treegrid\bootstrap-table-treegrid.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-af-ZA.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-af-ZA.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ar-SA.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ar-SA.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ca-ES.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ca-ES.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-cs-CZ.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-cs-CZ.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-da-DK.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-da-DK.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-de-DE.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-de-DE.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-el-GR.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-el-GR.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-en-US.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-en-US.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-es-AR.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-es-AR.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-es-CL.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-es-CL.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-es-CR.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-es-CR.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-es-ES.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-es-ES.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-es-MX.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-es-MX.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-es-NI.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-es-NI.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-es-SP.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-es-SP.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-et-EE.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-et-EE.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-eu-EU.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-eu-EU.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-fa-IR.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-fa-IR.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-fi-FI.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-fi-FI.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-fr-BE.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-fr-BE.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-fr-CH.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-fr-CH.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-fr-FR.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-fr-FR.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-fr-LU.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-fr-LU.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-he-IL.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-he-IL.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-hr-HR.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-hr-HR.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-hu-HU.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-hu-HU.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-id-ID.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-id-ID.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-it-IT.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-it-IT.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ja-JP.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ja-JP.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ka-GE.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ka-GE.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ko-KR.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ko-KR.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ms-MY.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ms-MY.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-nb-NO.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-nb-NO.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-nl-BE.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-nl-BE.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-nl-NL.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-nl-NL.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-pl-PL.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-pl-PL.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-pt-BR.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-pt-BR.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-pt-PT.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-pt-PT.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ro-RO.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ro-RO.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ru-RU.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ru-RU.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-sk-SK.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-sk-SK.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-sr-Cyrl-RS.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-sr-Cyrl-RS.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-sr-Latn-RS.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-sr-Latn-RS.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-sv-SE.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-sv-SE.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-th-TH.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-th-TH.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-tr-TR.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-tr-TR.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-uk-UA.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-uk-UA.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ur-PK.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-ur-PK.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-uz-Latn-UZ.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-uz-Latn-UZ.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-vi-VN.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-vi-VN.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-zh-CN.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-zh-CN.min.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-zh-TW.js" />
+    <Content Include="assetscustom\bt1160\locale\bootstrap-table-zh-TW.min.js" />
+    <Content Include="assetscustom\bt1160\themes\bulma\bootstrap-table-bulma.css" />
+    <Content Include="assetscustom\bt1160\themes\bulma\bootstrap-table-bulma.js" />
+    <Content Include="assetscustom\bt1160\themes\bulma\bootstrap-table-bulma.min.css" />
+    <Content Include="assetscustom\bt1160\themes\bulma\bootstrap-table-bulma.min.js" />
+    <Content Include="assetscustom\bt1160\themes\foundation\bootstrap-table-foundation.css" />
+    <Content Include="assetscustom\bt1160\themes\foundation\bootstrap-table-foundation.js" />
+    <Content Include="assetscustom\bt1160\themes\foundation\bootstrap-table-foundation.min.css" />
+    <Content Include="assetscustom\bt1160\themes\foundation\bootstrap-table-foundation.min.js" />
+    <Content Include="assetscustom\bt1160\themes\materialize\bootstrap-table-materialize.css" />
+    <Content Include="assetscustom\bt1160\themes\materialize\bootstrap-table-materialize.js" />
+    <Content Include="assetscustom\bt1160\themes\materialize\bootstrap-table-materialize.min.css" />
+    <Content Include="assetscustom\bt1160\themes\materialize\bootstrap-table-materialize.min.js" />
+    <Content Include="assetscustom\bt1160\themes\semantic\bootstrap-table-semantic.css" />
+    <Content Include="assetscustom\bt1160\themes\semantic\bootstrap-table-semantic.js" />
+    <Content Include="assetscustom\bt1160\themes\semantic\bootstrap-table-semantic.min.css" />
+    <Content Include="assetscustom\bt1160\themes\semantic\bootstrap-table-semantic.min.js" />
+    <Content Include="assetscustom\css\toggle.css" />
+    <Content Include="assetscustom\font-glyphicons.css" />
+    <Content Include="assetscustom\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assetscustom\fotos\001JAVIER.PNG" />
+    <Content Include="assetscustom\fotos\002CANELA.PNG" />
+    <Content Include="assetscustom\images\Icono.ico" />
+    <Content Include="assets\css\admin\assets\fonts\themify.svg" />
+    <Content Include="assets\css\lib\barRating\barRating.css" />
+    <Content Include="assets\css\lib\bootstrap.min.css" />
+    <Content Include="assets\css\lib\calendar2\pignose.calendar.min.css" />
+    <Content Include="assets\css\lib\calendar2\semantic.ui.min.css" />
+    <Content Include="assets\css\lib\calendar\fullcalendar.css" />
+    <Content Include="assets\css\lib\chartist\chartist.min.css" />
+    <Content Include="assets\css\lib\data-table\buttons.bootstrap.min.css" />
+    <Content Include="assets\css\lib\data-table\buttons.dataTables.min.css" />
+    <Content Include="assets\css\lib\data-table\dataTables.bootstrap.min.css" />
+    <Content Include="assets\css\lib\datepicker\bootstrap-datepicker3.min.css" />
+    <Content Include="assets\css\lib\font-awesome.min.css" />
+    <Content Include="assets\css\lib\helper.css" />
+    <Content Include="assets\css\lib\jquery-ui.min.css" />
+    <Content Include="assets\css\lib\jsgrid\jsgrid-theme.min.css" />
+    <Content Include="assets\css\lib\jsgrid\jsgrid.min.css" />
+    <Content Include="assets\css\lib\line-progress\jquery.lineProgressbar.css" />
+    <Content Include="assets\css\lib\lobi-panel\lobipanel.min.css" />
+    <Content Include="assets\css\lib\materialize.min.css" />
+    <Content Include="assets\css\lib\menubar\sidebar.css" />
+    <Content Include="assets\css\lib\metismenu\menu.css" />
+    <Content Include="assets\css\lib\mmc-chat.css" />
+    <Content Include="assets\css\lib\nestable\nestable.css" />
+    <Content Include="assets\css\lib\owl.carousel.min.css" />
+    <Content Include="assets\css\lib\owl.theme.default.min.css" />
+    <Content Include="assets\css\lib\preloader\pace.css" />
+    <Content Include="assets\css\lib\rangSlider\ion.rangeSlider.css" />
+    <Content Include="assets\css\lib\rangSlider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="assets\css\lib\rangSlider\ion.rangeSlider.skinHTML5.css" />
+    <Content Include="assets\css\lib\rangSlider\ion.rangeSlider.skinModern.css" />
+    <Content Include="assets\css\lib\rangSlider\ion.rangeSlider.skinNice.css" />
+    <Content Include="assets\css\lib\rangSlider\ion.rangeSlider.skinSimple.css" />
+    <Content Include="assets\css\lib\rangSlider\normalize.css" />
+    <Content Include="assets\css\lib\scrollable\scrollable.min.css" />
+    <Content Include="assets\css\lib\select2\select2.min.css" />
+    <Content Include="assets\css\lib\sweetalert\sweetalert.css" />
+    <Content Include="assets\css\lib\themify-icons.css" />
+    <Content Include="assets\css\lib\toastr\toastr.min.css" />
+    <Content Include="assets\css\lib\vector-map\jqvmap.min.css" />
+    <Content Include="assets\css\lib\weather-icons.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\fontawesome-webfont_files\viewsource.css" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\fonts\MontserratLight.svg" />
+    <Content Include="assets\fonts\themify.svg" />
+    <Content Include="assets\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="assets\images\1.png" />
+    <Content Include="assets\images\2.png" />
+    <Content Include="assets\images\3.jpg" />
+    <Content Include="assets\images\3.png" />
+    <Content Include="assets\images\4.jpg" />
+    <Content Include="assets\images\8.png" />
+    <Content Include="assets\images\avatar.png" />
+    <Content Include="assets\images\avatar\1.jpg" />
+    <Content Include="assets\images\avatar\2.jpg" />
+    <Content Include="assets\images\avatar\3.jpg" />
+    <Content Include="assets\images\avatar\usa-flag.png" />
+    <Content Include="assets\images\bookingSystem\1.png" />
+    <Content Include="assets\images\bookingSystem\2.png" />
+    <Content Include="assets\images\bookingSystem\3.png" />
+    <Content Include="assets\images\bookingSystem\4.png" />
+    <Content Include="assets\images\bookingSystem\5.png" />
+    <Content Include="assets\images\bookingSystem\6.png" />
+    <Content Include="assets\images\bookingSystem\7.png" />
+    <Content Include="assets\images\bookingSystem\8.png" />
+    <Content Include="assets\images\c1.jpg" />
+    <Content Include="assets\images\c2.jpg" />
+    <Content Include="assets\images\c3.jpg" />
+    <Content Include="assets\images\chat-person-add.png" />
+    <Content Include="assets\images\close.png" />
+    <Content Include="assets\images\fjords.jpg" />
+    <Content Include="assets\images\hand.jpg" />
+    <Content Include="assets\images\lights.jpg" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\maximize.png" />
+    <Content Include="assets\images\minimize.png" />
+    <Content Include="assets\images\nature.jpg" />
+    <Content Include="assets\images\newyork.jpg" />
+    <Content Include="assets\images\paris.jpg" />
+    <Content Include="assets\images\paypal.png" />
+    <Content Include="assets\images\picture.png" />
+    <Content Include="assets\images\preview1.png" />
+    <Content Include="assets\images\product-2.jpg" />
+    <Content Include="assets\images\product.jpg" />
+    <Content Include="assets\images\product_1\1.jpg" />
+    <Content Include="assets\images\product_1\2.jpg" />
+    <Content Include="assets\images\product_1\3.jpg" />
+    <Content Include="assets\images\product_1\burger.jpg" />
+    <Content Include="assets\images\product_1\download.jpg" />
+    <Content Include="assets\images\product_1\image-10.jpg" />
+    <Content Include="assets\images\product_1\image-8-226x223.jpg" />
+    <Content Include="assets\images\product_1\image-9.jpg" />
+    <Content Include="assets\images\product_1\images.jpg" />
+    <Content Include="assets\images\product_1\pizza2.jpg" />
+    <Content Include="assets\images\profile-bg.jpg" />
+    <Content Include="assets\images\rangeSliderimg\sprite-skin-flat.png" />
+    <Content Include="assets\images\rangeSliderimg\sprite-skin-modern.png" />
+    <Content Include="assets\images\rangeSliderimg\sprite-skin-nice.png" />
+    <Content Include="assets\images\rangeSliderimg\sprite-skin-simple.png" />
+    <Content Include="assets\images\sanfran.jpg" />
+    <Content Include="assets\images\scrollable\view-1-1200x800.jpg" />
+    <Content Include="assets\images\smile.png" />
+    <Content Include="assets\images\user-1.png" />
+    <Content Include="assets\images\user-bg.jpg" />
+    <Content Include="assets\images\user-female.png" />
+    <Content Include="assets\images\user-profile.jpg" />
+    <Content Include="assets\images\user.jpg" />
+    <Content Include="assets\images\video-cam.png" />
+    <Content Include="assets\images\watch.jpg" />
+    <Content Include="assets\js\dashboard1.js" />
+    <Content Include="assets\js\dashboard2.js" />
+    <Content Include="assets\js\lib\barRating\barRating.init.js" />
+    <Content Include="assets\js\lib\barRating\jquery.barrating.js" />
+    <Content Include="assets\js\lib\bootstrap.min.js" />
+    <Content Include="assets\js\lib\calendar-2\moment.latest.min.js" />
+    <Content Include="assets\js\lib\calendar-2\pignose.calendar.min.js" />
+    <Content Include="assets\js\lib\calendar-2\pignose.init.js" />
+    <Content Include="assets\js\lib\calendar-2\prism.min.js" />
+    <Content Include="assets\js\lib\calendar-2\semantic.ui.min.js" />
+    <Content Include="assets\js\lib\calendar\fullcalendar-init.js" />
+    <Content Include="assets\js\lib\calendar\fullcalendar.min.js" />
+    <Content Include="assets\js\lib\chart-js\Chart.bundle.js" />
+    <Content Include="assets\js\lib\chart-js\chartjs-init.js" />
+    <Content Include="assets\js\lib\chartist\chartist-init.js" />
+    <Content Include="assets\js\lib\chartist\chartist-plugin-tooltip.min.js" />
+    <Content Include="assets\js\lib\chartist\chartist.min.js" />
+    <Content Include="assets\js\lib\chat-widget\chat-widget-init.js" />
+    <Content Include="assets\js\lib\circle-progress\circle-progress-init.js" />
+    <Content Include="assets\js\lib\circle-progress\circle-progress.min.js" />
+    <Content Include="assets\js\lib\data-table\buttons.colVis.min.js" />
+    <Content Include="assets\js\lib\data-table\buttons.flash.min.js" />
+    <Content Include="assets\js\lib\data-table\buttons.html5.min.js" />
+    <Content Include="assets\js\lib\data-table\buttons.print.min.js" />
+    <Content Include="assets\js\lib\data-table\datatables-init.js" />
+    <Content Include="assets\js\lib\data-table\dataTables.buttons.min.js" />
+    <Content Include="assets\js\lib\data-table\datatables.min.js" />
+    <Content Include="assets\js\lib\data-table\jquery-1.12.4.js" />
+    <Content Include="assets\js\lib\data-table\jquery.dataTables.min.js" />
+    <Content Include="assets\js\lib\data-table\jszip.min.js" />
+    <Content Include="assets\js\lib\data-table\pdfmake.min.js" />
+    <Content Include="assets\js\lib\data-table\vfs_fonts.js" />
+    <Content Include="assets\js\lib\datamap\d3.min.js" />
+    <Content Include="assets\js\lib\datamap\datamap-init.js" />
+    <Content Include="assets\js\lib\datamap\datamaps.world.min.js" />
+    <Content Include="assets\js\lib\datamap\topojson.js" />
+    <Content Include="assets\js\lib\datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="assets\js\lib\easing\jquery.easing.min.js" />
+    <Content Include="assets\js\lib\easing\stepup-form-init.js" />
+    <Content Include="assets\js\lib\flot-chart\curvedLines.js" />
+    <Content Include="assets\js\lib\flot-chart\excanvas.min.js" />
+    <Content Include="assets\js\lib\flot-chart\flot-chart-init.js" />
+    <Content Include="assets\js\lib\flot-chart\flot-tooltip\jquery.flot.tooltip.min.js" />
+    <Content Include="assets\js\lib\flot-chart\jquery.flot.categories.js" />
+    <Content Include="assets\js\lib\flot-chart\jquery.flot.crosshair.js" />
+    <Content Include="assets\js\lib\flot-chart\jquery.flot.js" />
+    <Content Include="assets\js\lib\flot-chart\jquery.flot.pie.js" />
+    <Content Include="assets\js\lib\flot-chart\jquery.flot.resize.js" />
+    <Content Include="assets\js\lib\flot-chart\jquery.flot.stack.js" />
+    <Content Include="assets\js\lib\flot-chart\jquery.flot.threshold.js" />
+    <Content Include="assets\js\lib\flot-chart\jquery.flot.time.js" />
+    <Content Include="assets\js\lib\flowtype.js" />
+    <Content Include="assets\js\lib\form-validation\jquery.validate-init.js" />
+    <Content Include="assets\js\lib\form-validation\jquery.validate.min.js" />
+    <Content Include="assets\js\lib\gmap\gmap.init.js" />
+    <Content Include="assets\js\lib\gmap\gmapApi.js" />
+    <Content Include="assets\js\lib\gmap\gmaps.js" />
+    <Content Include="assets\js\lib\granim\granim-init.js" />
+    <Content Include="assets\js\lib\granim\granim.min.js" />
+    <Content Include="assets\js\lib\invoice-edit.js" />
+    <Content Include="assets\js\lib\jquery-ui\jquery-ui.min.js" />
+    <Content Include="assets\js\lib\jquery-ui\jquery.ui.touch-punch.min.js" />
+    <Content Include="assets\js\lib\jquery.min.js" />
+    <Content Include="assets\js\lib\jquery.nanoscroller.min.js" />
+    <Content Include="assets\js\lib\jsgrid\db.js" />
+    <Content Include="assets\js\lib\jsgrid\fields\jsgrid.field.checkbox.js" />
+    <Content Include="assets\js\lib\jsgrid\fields\jsgrid.field.control.js" />
+    <Content Include="assets\js\lib\jsgrid\fields\jsgrid.field.number.js" />
+    <Content Include="assets\js\lib\jsgrid\fields\jsgrid.field.select.js" />
+    <Content Include="assets\js\lib\jsgrid\fields\jsgrid.field.text.js" />
+    <Content Include="assets\js\lib\jsgrid\fields\jsgrid.field.textarea.js" />
+    <Content Include="assets\js\lib\jsgrid\jsgrid-init.js" />
+    <Content Include="assets\js\lib\jsgrid\jsgrid.core.js" />
+    <Content Include="assets\js\lib\jsgrid\jsgrid.field.js" />
+    <Content Include="assets\js\lib\jsgrid\jsgrid.load-indicator.js" />
+    <Content Include="assets\js\lib\jsgrid\jsgrid.load-strategies.js" />
+    <Content Include="assets\js\lib\jsgrid\jsgrid.sort-strategies.js" />
+    <Content Include="assets\js\lib\jsgrid\jsgrid.validation.js" />
+    <Content Include="assets\js\lib\knob\jquery.knob.min.js" />
+    <Content Include="assets\js\lib\knob\knob.init.js" />
+    <Content Include="assets\js\lib\line-progress\jquery.lineProgressbar.js" />
+    <Content Include="assets\js\lib\line-progress\line-progress-init.js" />
+    <Content Include="assets\js\lib\menubar\sidebar.js" />
+    <Content Include="assets\js\lib\metismenu\jquery.slimscroll.js" />
+    <Content Include="assets\js\lib\metismenu\metismenu.init.js" />
+    <Content Include="assets\js\lib\metismenu\metismenu.min.js" />
+    <Content Include="assets\js\lib\mmc-common.js" />
+    <Content Include="assets\js\lib\moment\moment.js" />
+    <Content Include="assets\js\lib\morris-chart\morris-init.js" />
+    <Content Include="assets\js\lib\morris-chart\morris.js" />
+    <Content Include="assets\js\lib\morris-chart\raphael-min.js" />
+    <Content Include="assets\js\lib\nestable\jquery.nestable.js" />
+    <Content Include="assets\js\lib\nestable\nestable.init.js" />
+    <Content Include="assets\js\lib\owl-carousel\owl.carousel-init.js" />
+    <Content Include="assets\js\lib\owl-carousel\owl.carousel.min.js" />
+    <Content Include="assets\js\lib\peitychart\jquery.peity.min.js" />
+    <Content Include="assets\js\lib\peitychart\peitychart.init.js" />
+    <Content Include="assets\js\lib\portlets\portlets-init.js" />
+    <Content Include="assets\js\lib\portlets\portlets.js" />
+    <Content Include="assets\js\lib\preloader\pace.min.js" />
+    <Content Include="assets\js\lib\rangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="assets\js\lib\rangeSlider\moment-with-locales.js" />
+    <Content Include="assets\js\lib\rangeSlider\moment.js" />
+    <Content Include="assets\js\lib\rangeSlider\rangeslider.init.js" />
+    <Content Include="assets\js\lib\rating1\jRate.init.js" />
+    <Content Include="assets\js\lib\rating1\jRate.min.js" />
+    <Content Include="assets\js\lib\scrollable\holder.js" />
+    <Content Include="assets\js\lib\scrollable\jquery-asScrollable.min.js" />
+    <Content Include="assets\js\lib\scrollable\jquery-asScrollbar.js" />
+    <Content Include="assets\js\lib\scrollable\scrollable.init.js" />
+    <Content Include="assets\js\lib\select2\select2.full.min.js" />
+    <Content Include="assets\js\lib\sparklinechart\jquery.sparkline.min.js" />
+    <Content Include="assets\js\lib\sparklinechart\sparkline.init.js" />
+    <Content Include="assets\js\lib\sweetalert\sweetalert.init.js" />
+    <Content Include="assets\js\lib\sweetalert\sweetalert.min.js" />
+    <Content Include="assets\js\lib\toastr\toastr.init.js" />
+    <Content Include="assets\js\lib\toastr\toastr.min.js" />
+    <Content Include="assets\js\lib\vector-map\country\jquery.vmap.algeria.js" />
+    <Content Include="assets\js\lib\vector-map\country\jquery.vmap.argentina.js" />
+    <Content Include="assets\js\lib\vector-map\country\jquery.vmap.brazil.js" />
+    <Content Include="assets\js\lib\vector-map\country\jquery.vmap.europe.js" />
+    <Content Include="assets\js\lib\vector-map\country\jquery.vmap.france.js" />
+    <Content Include="assets\js\lib\vector-map\country\jquery.vmap.germany.js" />
+    <Content Include="assets\js\lib\vector-map\country\jquery.vmap.greece.js" />
+    <Content Include="assets\js\lib\vector-map\country\jquery.vmap.iran.js" />
+    <Content Include="assets\js\lib\vector-map\country\jquery.vmap.iraq.js" />
+    <Content Include="assets\js\lib\vector-map\country\jquery.vmap.russia.js" />
+    <Content Include="assets\js\lib\vector-map\country\jquery.vmap.tunisia.js" />
+    <Content Include="assets\js\lib\vector-map\country\jquery.vmap.turkey.js" />
+    <Content Include="assets\js\lib\vector-map\country\jquery.vmap.usa.js" />
+    <Content Include="assets\js\lib\vector-map\country\jquery.vmap.world.js" />
+    <Content Include="assets\js\lib\vector-map\jquery.vmap.js" />
+    <Content Include="assets\js\lib\vector-map\jquery.vmap.min.js" />
+    <Content Include="assets\js\lib\vector-map\jquery.vmap.sampledata.js" />
+    <Content Include="assets\js\lib\vector-map\vector.init.js" />
+    <Content Include="assets\js\lib\weather\jquery.simpleWeather.min.js" />
+    <Content Include="assets\js\lib\weather\weather-init.js" />
+    <Content Include="assets\js\scripts.js" />
+    <Content Include="assets\placeholder\1.png" />
+    <Content Include="assets\placeholder\2.png" />
+    <Content Include="assets\placeholder\3.jpg" />
+    <Content Include="assets\placeholder\3.png" />
+    <Content Include="assets\placeholder\4.jpg" />
+    <Content Include="assets\placeholder\avatar.png" />
+    <Content Include="assets\placeholder\avatar\1.jpg" />
+    <Content Include="assets\placeholder\avatar\2.jpg" />
+    <Content Include="assets\placeholder\avatar\3.jpg" />
+    <Content Include="assets\placeholder\avatar\usa-flag.png" />
+    <Content Include="assets\placeholder\chat-person-add.png" />
+    <Content Include="assets\placeholder\close.png" />
+    <Content Include="assets\placeholder\fjords.jpg" />
+    <Content Include="assets\placeholder\hand.jpg" />
+    <Content Include="assets\placeholder\lights.jpg" />
+    <Content Include="assets\placeholder\logo.png" />
+    <Content Include="assets\placeholder\maximize.png" />
+    <Content Include="assets\placeholder\minimize.png" />
+    <Content Include="assets\placeholder\nature.jpg" />
+    <Content Include="assets\placeholder\newyork.jpg" />
+    <Content Include="assets\placeholder\paris.jpg" />
+    <Content Include="assets\placeholder\paypal.png" />
+    <Content Include="assets\placeholder\picture.png" />
+    <Content Include="assets\placeholder\preview1.png" />
+    <Content Include="assets\placeholder\profile-bg.jpg" />
+    <Content Include="assets\placeholder\rangeSliderimg\sprite-skin-flat.png" />
+    <Content Include="assets\placeholder\rangeSliderimg\sprite-skin-modern.png" />
+    <Content Include="assets\placeholder\rangeSliderimg\sprite-skin-nice.png" />
+    <Content Include="assets\placeholder\rangeSliderimg\sprite-skin-simple.png" />
+    <Content Include="assets\placeholder\sanfran.jpg" />
+    <Content Include="assets\placeholder\scrollable\view-1-1200x800.jpg" />
+    <Content Include="assets\placeholder\smile.png" />
+    <Content Include="assets\placeholder\user-1.png" />
+    <Content Include="assets\placeholder\user-female.png" />
+    <Content Include="assets\placeholder\user-profile.jpg" />
+    <Content Include="assets\placeholder\user.jpg" />
+    <Content Include="assets\placeholder\video-cam.png" />
+    <Content Include="index.html" />
+    <Content Include="js\helpers\Estandar_Vistas.js" />
+    <Content Include="js\helpers\Funciones_Generales.js" />
+    <Content Include="js\pages\CatMenus.js" />
+    <Content Include="js\pages\CatRoles.js" />
+    <Content Include="js\pages\CatUsuarios.js" />
+    <Content Include="js\pages\Inicio.js" />
+    <Content Include="js\pages\login.js" />
+    <Content Include="js\pages\Parametros.js" />
+    <Content Include="js\pages\Registro.js" />
+    <Content Include="js\pages\SiteMaster.js" />
+    <Content Include="js\pages\Veamos.js" />
+    <Content Include="paginas\CatMenus.aspx" />
+    <Content Include="paginas\CatRoles.aspx" />
+    <Content Include="paginas\CatUsuarios.aspx" />
+    <Content Include="paginas\Home.aspx" />
+    <Content Include="paginas\Inicio.aspx" />
+    <Content Include="paginas\Parametros.aspx" />
+    <Content Include="paginas\Registro.aspx" />
+    <Content Include="paginas\Veamos.aspx" />
+    <Content Include="Services\WSCatMenus.asmx" />
+    <Content Include="Services\WSCatUsuarios.asmx" />
+    <Content Include="Services\WSCatRoles.asmx" />
+    <Content Include="Services\WSRegistro.asmx" />
+    <Content Include="Services\WSSeguridad.asmx" />
+    <Content Include="Services\WSVeamos.asmx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\CatMenus.cs" />
+    <Compile Include="Data\CatRoles.cs" />
+    <Compile Include="Data\CatUsuarios.cs" />
+    <Compile Include="Data\Cnxn.cs" />
+    <Compile Include="Data\DataSetExtensions.cs" />
+    <Compile Include="Data\MensajeServidor.cs" />
+    <Compile Include="Data\Registro.cs" />
+    <Compile Include="Data\Seguridad.cs" />
+    <Compile Include="Data\Sezzion.cs" />
+    <Compile Include="Data\Veamos.cs" />
+    <Compile Include="paginas\CatMenus.aspx.cs">
+      <DependentUpon>CatMenus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginas\CatMenus.aspx.designer.cs">
+      <DependentUpon>CatMenus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\CatRoles.aspx.cs">
+      <DependentUpon>CatRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginas\CatRoles.aspx.designer.cs">
+      <DependentUpon>CatRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\CatUsuarios.aspx.cs">
+      <DependentUpon>CatUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginas\CatUsuarios.aspx.designer.cs">
+      <DependentUpon>CatUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginas\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginas\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\Parametros.aspx.cs">
+      <DependentUpon>Parametros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginas\Parametros.aspx.designer.cs">
+      <DependentUpon>Parametros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginas\Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\SiteMaster.Master.cs">
+      <DependentUpon>SiteMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginas\SiteMaster.Master.designer.cs">
+      <DependentUpon>SiteMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\Veamos.aspx.cs">
+      <DependentUpon>Veamos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginas\Veamos.aspx.designer.cs">
+      <DependentUpon>Veamos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\ITextEvents.cs" />
+    <Compile Include="reportes\iTextSharpHelper.cs" />
+    <Compile Include="Services\WSCatMenus.asmx.cs">
+      <DependentUpon>WSCatMenus.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\WSCatUsuarios.asmx.cs">
+      <DependentUpon>WSCatUsuarios.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\WSCatRoles.asmx.cs">
+      <DependentUpon>WSCatRoles.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\WSRegistro.asmx.cs">
+      <DependentUpon>WSRegistro.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\WSSeguridad.asmx.cs">
+      <DependentUpon>WSSeguridad.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\WSVeamos.asmx.cs">
+      <DependentUpon>WSVeamos.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\.DS_Store" />
+    <Content Include="assets\css\.DS_Store" />
+    <Content Include="assets\css\admin\assets\fonts\themify.eot" />
+    <Content Include="assets\css\admin\assets\fonts\themify.ttf" />
+    <Content Include="assets\css\admin\assets\fonts\themify.woff" />
+    <Content Include="assets\fonts\.DS_Store" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\fonts\MontserratLight.eot" />
+    <Content Include="assets\fonts\MontserratLight.ttf" />
+    <Content Include="assets\fonts\MontserratLight.woff" />
+    <Content Include="assets\fonts\MontserratLight.woff2" />
+    <Content Include="assets\fonts\roboto\Roboto-Bold.woff" />
+    <Content Include="assets\fonts\roboto\Roboto-Bold.woff2" />
+    <Content Include="assets\fonts\roboto\Roboto-Light.woff" />
+    <Content Include="assets\fonts\roboto\Roboto-Light.woff2" />
+    <Content Include="assets\fonts\roboto\Roboto-Medium.woff" />
+    <Content Include="assets\fonts\roboto\Roboto-Medium.woff2" />
+    <Content Include="assets\fonts\roboto\Roboto-Regular.woff" />
+    <Content Include="assets\fonts\roboto\Roboto-Regular.woff2" />
+    <Content Include="assets\fonts\roboto\Roboto-Thin.woff" />
+    <Content Include="assets\fonts\roboto\Roboto-Thin.woff2" />
+    <Content Include="assets\fonts\themify.eot" />
+    <Content Include="assets\fonts\themify.ttf" />
+    <Content Include="assets\fonts\themify.woff" />
+    <Content Include="assets\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="assets\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="assets\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="assets\fonts\weathericons-regular-webfont.woff2" />
+    <Content Include="assets\images\.DS_Store" />
+    <Content Include="assets\placeholder\.DS_Store" />
+    <Content Include="FileUploadHandler.ashx" />
+    <Content Include="assetscustom\b400\bootstrap\.bower.json" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="assetscustom\b400\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="assetscustom\b400\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="assetscustom\b400\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="assetscustom\b400\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="assetscustom\b400\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="assetscustom\b400\bootstrap\LICENSE" />
+    <Content Include="assetscustom\b400\jquery\.bower.json" />
+    <Content Include="assetscustom\b400\jquery\dist\jquery.min.map" />
+    <Content Include="assetscustom\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assetscustom\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assetscustom\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assetscustom\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="packages.config" />
+    <Content Include="paginas\SiteMaster.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60123</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44326/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

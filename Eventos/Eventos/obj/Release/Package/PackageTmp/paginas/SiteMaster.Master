@@ -1,0 +1,806 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteMaster.master.cs" Inherits="veamosmty.paginas.SiteMaster" %>
+
+<%@ Import Namespace="veamosmty.Data" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Veamos Mty</title>
+
+
+
+    <!-- ================= Favicon ================== -->
+    <link rel="icon" href="../assetscustom/images/Icono.ico">
+
+    <link href="../assetscustom/font-glyphicons.css" rel="stylesheet" />
+    <!-- Toastr -->
+    <link href="../assets/css/lib/toastr/toastr.min.css" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="../assets/css/lib/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- Range Slider -->
+    <link href="../assets/css/lib/rangSlider/ion.rangeSlider.css" rel="stylesheet">
+    <link href="../assets/css/lib/rangSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <!-- Bar Rating -->
+    <link href="../assets/css/lib/barRating/barRating.css" rel="stylesheet">
+    <!-- Nestable -->
+    <link href="../assets/css/lib/nestable/nestable.css" rel="stylesheet">
+    <!-- JsGrid -->
+    <%--    <link href="../assets/css/lib/jsgrid/jsgrid-theme.min.css" rel="stylesheet" />
+    <link href="../assets/css/lib/jsgrid/jsgrid.min.css" type="text/css" rel="stylesheet" />--%>
+    <!-- Datatable -->
+    <%--<link href="../assets/css/lib/datatable/dataTables.bootstrap.min.css" rel="stylesheet" />--%>
+    <%--<link href="../assets/css/lib/data-table/buttons.bootstrap.min.css" rel="stylesheet" />--%>
+    <!-- Calender 2 -->
+    <%--<link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">--%>
+    <!-- Weather Icon -->
+    <%--<link href="../assets/css/lib/weather-icons.css" rel="stylesheet" />--%>
+    <!-- Owl Carousel -->
+    <%--    <link href="../assets/css/lib/owl.carousel.min.css" rel="stylesheet" />
+    <link href="../assets/css/lib/owl.theme.default.min.css" rel="stylesheet" />--%>
+    <!-- Select2 -->
+    <link href="../assets/css/lib/select2/select2.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <%--    <link href="../assets/css/lib/chartist/chartist.min.css" rel="stylesheet">--%>
+    <!-- Calender -->
+    <%--<link href="../assets/css/lib/calendar/fullcalendar.css" rel="stylesheet" />--%>
+
+    <!-- Common -->
+    <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="../assets/css/lib/menubar/sidebar.css" rel="stylesheet">
+    <link href="../assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="../assetscustom/b400/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assetscustom/b400/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+
+
+    <link href="../assetscustom/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <%--<link href="../assetscustom/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />--%>
+
+
+    <link href="../assetscustom/bt1160/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../assetscustom/bt1160/extensions/fixed-columns/bootstrap-table-fixed-columns.css" rel="stylesheet" />
+
+
+    <link href="../assets/css/lib/helper.css" rel="stylesheet">
+    <link href="../assets/css/style.css?v1.Fix220808" rel="stylesheet">
+
+    <style>
+        .sidebar-hide .logo img {
+            display: none;
+        }
+        .sidebar-hide .logo h3 {
+            display: none;
+        }
+
+        .sidebar-hide .sidebar.sidebar-hide-to-small {
+    height: 100vh;
+}
+        .input-group-block label{
+            display:block;
+            width:100%;
+            margin-bottom:2px;
+        }
+         .input-group-block input{
+            display:block;
+        }
+
+         .mk-carpool-activo{
+             color: var(--mk-color-principal);
+         }
+         .mk-carpool-inactivo{
+             color: #808080;
+         }
+
+        .container-fluid {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            padding:0px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .mk-card {
+            padding:5px;
+        }
+        .mk-card .row{
+            padding-left:10px;
+            padding-right:5px;
+        }
+        .mk-card .row .form-group label{
+            margin:0px;
+        }
+
+        .mk-card h4{
+            margin:0px;
+            font-weight:bold;
+        }
+        .mk-card-seccion {
+            padding:0px;
+            box-shadow:none;
+            border:0px;
+            border-bottom: 1px solid #ebebeb;
+            padding-bottom:10px;
+        }
+        .mk-card-title {
+            width: 100%;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 0px;
+            padding-left: 10px;
+            background: transparent;
+            color: var(--secondary);
+            padding: 0.25rem 0.5rem;
+            margin-bottom: 10px;
+            font-style: italic;
+            border-top: 1px solid #ebebeb;
+            border-bottom: 1px solid #ebebeb;
+        }
+        .row{
+            margin:0px;
+            padding:px;
+        }
+        .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+            padding:0px;
+            padding-left:2px;
+/*            padding-top: 0px;
+            padding-bottom: 0px;*/
+        }
+        .mk-fn {
+            width:100%;
+            display:inline-flex;
+        }
+        .mk-fn-label {
+            width:25%;
+            height:100%;
+            text-align: right;
+        }
+            .mk-fn-label label {
+                margin-top: 17px;
+                margin-bottom: 0px;
+                font-size: 10px;
+            }
+
+        .mk-fn-elementos {
+            width:75%;
+        }
+        .mk-fn-elementos-labels {
+            width:100%;
+            display:block;
+        }
+        .mk-fn-elementos-inputs {
+            width:100%;
+            display:block;        
+        }
+        .mk-fn-elementos-labels label {
+            width:33.3%;
+            text-align:center;   
+            margin:0px;
+        }
+        .mk-fn-elementos-inputs .form-control {
+            width:31%;
+            display: inline-block;
+        }
+        .mk-fn-elementos-inputs .dia {
+            margin-left:5px; 
+            text-align:center;
+        }
+        .mk-fn-elementos-inputs .mes {
+            margin-left:2px; 
+            margin-right:2px;
+        }
+        .mk-fn-elementos-inputs .anio {
+            text-align:center;
+        }
+
+        .mk-btn-footer {
+            width:100%;
+            margin: 5px 10px;
+            text-align:center;
+        }
+
+        .sidebar-hide .sidebar.sidebar-shrink.sidebar-hide-to-small ~ .content-wrap {
+            margin-left: initial;
+        }
+        .sidebar.sidebar-shrink~.content-wrap {
+        margin-left: initial; 
+        }
+        @media only screen and (min-width: 768px) {
+            .mk-card {
+                padding: 20px;
+                margin: 25px;
+            }
+        }
+
+        @media only screen and (min-width: 580px) {
+            .mk-btn-footer {
+                width:200px;
+                float:right;
+                text-align:center;
+            }
+        }
+
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures" hidden>
+        <div class="nano">
+            <div class="nano-content">
+                <div class="logo">
+                    <h3 class="text-white mt-3">SEVENT</h3>
+<%--                    <a href="Inicio.aspx">
+                        <img src="../assetscustom/images/Logo.png" />
+
+                    </a>--%>
+                </div>
+                <ul id="BarraMenu">
+                    <%--                    <li class="label">Main</li>
+                    <li>
+                        <a href="HistoriaClinica.aspx">
+                            <i class="ti-write"></i> Historia Clínica
+                        </a>
+                    </li>
+                    <li>
+                        <a href="HuskyPass.aspx">
+                            <i class="ti-shield"></i> Husky Pass
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Academias.aspx">
+                            <i class="ti-book"></i> Academias
+                        </a>
+                    </li>
+                    <li>
+                        <a href="CardPool.aspx">
+                            <i class="ti-receipt"></i> Car Pool
+                        </a>
+                    </li>--%>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /# sidebar -->
+
+
+    <div class="header" hidden>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="float-left">
+                        <div class="hamburger sidebar-toggle">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="float-right">
+                        <div class="dropdown dib" hidden>
+                            <div class="header-icon" data-toggle="dropdown">
+                                <i class="ti-bell"></i>
+                                <div class="drop-down dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-content-heading">
+                                        <span class="text-left">Recent Notifications</span>
+                                    </div>
+                                    <div class="dropdown-content-body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../assets/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-text">5 members joined today </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../assets/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mariam</div>
+                                                        <div class="notification-text">likes a photo of you</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../assets/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Tasnim</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../assets/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="text-center">
+                                                <a href="#" class="more-link">See All</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown dib" hidden>
+                            <div class="header-icon" data-toggle="dropdown">
+                                <i class="ti-email"></i>
+                                <div class="drop-down dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-content-heading">
+                                        <span class="text-left">2 New Messages</span>
+                                        <a href="email.html">
+                                            <i class="ti-pencil-alt pull-right"></i>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-content-body">
+                                        <ul>
+                                            <li class="notification-unread">
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../assets/images/avatar/1.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Michael Qin</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="notification-unread">
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../assets/images/avatar/2.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../assets/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Michael Qin</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="../assets/images/avatar/2.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="text-center">
+                                                <a href="#" class="more-link">See All</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown dib">
+                            <div class="header-icon" data-toggle="dropdown">
+                                <span class="user-avatar"><span id="infoNombreUsuario"></span>
+                                    <i class="ti-angle-down f-s-10"></i>
+                                </span>
+                                <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-content-body">
+                                        <ul>
+                                            <%--                                            <li>
+                                                <a href="#">
+                                                    <i class="ti-user"></i>
+                                                    <span>Profile</span>
+                                                </a>
+                                            </li>--%>
+
+                                            <%--                                            <li>
+                                                <a href="#">
+                                                    <i class="ti-email"></i>
+                                                    <span>Inbox</span>
+                                                </a>
+                                            </li>--%>
+                                            <li>
+                                                <a onclick="IrCambiarModal();">
+                                                    <i class="ti-settings"></i>
+                                                    <span>Cambio de contraseña</span>
+                                                </a>
+                                            </li>
+
+<%--                                            <li>
+                                                <button type="button" class="btn btn-primary" onclick="IrCambiarModal();">
+                                                    Launch demo modal
+                                                </button>
+                                            </li>--%>
+
+                                            <li>
+                                                <a onclick="Salir();">
+                                                    <i class="ti-power-off"></i>
+                                                    <span>Salir</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Button trigger modal -->
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <%--                 
+                    <div class="col-lg-8 p-r-0 title-margin-right">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <h1 id="nombreDashboard" class="p-0">&nbsp;
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    --%>
+                    <!-- /# column -->
+                    <%--                    
+                    <div class="col-lg-4 p-l-0 title-margin-left">
+                        <div class="page-header">
+                            <div class="page-title">
+                            </div>
+                        </div>
+                    </div>
+                    --%>
+
+                    <!-- /# column -->
+                </div>
+                <!-- /# row -->
+
+                <section id="main-content">
+                    <div class="row w-100 p-0 m-0">
+                        <div class="col-lg-12 w-100 p-0 m-0">
+                            <div id="extra-area-chart"></div>
+                            <div id="morris-line-chart"></div>
+
+                            <form id="form1" runat="server">
+                                <div>
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </div>
+                            </form>
+
+                            <div class="footer">
+                                <p>
+                                    2022 © Veamos Monterrey &nbsp;<a href="https://www.mokshasoft.com.mx" title="Moksha Software" target="_blank">Moksha Software</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal_Cambiar_Password" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Cambio de Contaseña</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fa fa-times"></i></span>
+                    </button>
+                </div>
+                <div id="MCP_Body" class="modal-body">
+                    
+                    <strong id="infoCP" class="modal-title text-info"></strong>
+
+                    <div class="row p-10">
+                        <div class="col-12 p-3">
+                            <div class="input-group input-group-block">
+                                <label for="Txt_Password">Contraseña Actual</label>
+                                <input type="password" class="form-control" id="Txt_Password_Actual" value="" autocomplete="off">
+                            </div>
+                        </div>
+
+                        <div class="col-12 p-3">
+                            <div class="input-group input-group-block">
+                                <label for="Txt_Password">Contraseña Nueva</label>
+                                <input type="password" class="form-control" id="Txt_Password_Nuevo" value="" autocomplete="off">
+                            </div>
+                        </div>
+
+                        <div class="col-12 p-3">
+                            <div class="input-group input-group-block">
+                                <label for="Txt_Confirmar_Password">Confirmar Contraseña</label>
+                                <input type="password" class="form-control" id="Txt_Confirmar_Password" value="" autocomplete="off">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button id="btnCPClose" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button id="btnCPSave" type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Common -->
+    <script src="../assets/js/lib/jquery.min.js"></script>
+    <script src="../assets/js/lib/jquery.nanoscroller.min.js"></script>
+    <script src="../assets/js/lib/menubar/sidebar.js"></script>
+    <script src="../assets/js/lib/preloader/pace.min.js"></script>
+    <script src="../assets/js/lib/bootstrap.min.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+
+    <script src="../assetscustom/b400/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Calender -->
+    <script src="../assets/js/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../assets/js/lib/moment/moment.js"></script>
+    <%--    <script src="../assets/js/lib/calendar/fullcalendar.min.js"></script>
+    <script src="../assets/js/lib/calendar/fullcalendar-init.js"></script>--%>
+
+    <!--  Flot Chart -->
+    <%--    <script src="../assets/js/lib/flot-chart/excanvas.min.js"></script>
+    <script src="../assets/js/lib/flot-chart/jquery.flot.js"></script>
+    <script src="../assets/js/lib/flot-chart/jquery.flot.pie.js"></script>
+    <script src="../assets/js/lib/flot-chart/jquery.flot.time.js"></script>
+    <script src="../assets/js/lib/flot-chart/jquery.flot.stack.js"></script>
+    <script src="../assets/js/lib/flot-chart/jquery.flot.resize.js"></script>
+    <script src="../assets/js/lib/flot-chart/jquery.flot.crosshair.js"></script>
+    <script src="../assets/js/lib/flot-chart/curvedLines.js"></script>
+    <script src="../assets/js/lib/flot-chart/flot-tooltip/jquery.flot.tooltip.min.js"></script>
+    <script src="../assets/js/lib/flot-chart/flot-chart-init.js"></script>--%>
+
+    <!--  Chartist -->
+    <%--    <script src="../assets/js/lib/chartist/chartist.min.js"></script>
+    <script src="../assets/js/lib/chartist/chartist-plugin-tooltip.min.js"></script>
+    <script src="../assets/js/lib/chartist/chartist-init.js"></script>--%>
+
+    <!--  Chartjs -->
+    <%--    <script src="../assets/js/lib/chart-js/Chart.bundle.js"></script>
+    <script src="../assets/js/lib/chart-js/chartjs-init.js"></script>--%>
+
+    <!--  Knob -->
+    <%--    <script src="../assets/js/lib/knob/jquery.knob.min.js "></script>
+    <script src="../assets/js/lib/knob/knob.init.js "></script>--%>
+
+    <!--  Morris -->
+    <%--    <script src="../assets/js/lib/morris-chart/raphael-min.js"></script>
+    <script src="../assets/js/lib/morris-chart/morris.js"></script>
+    <script src="../assets/js/lib/morris-chart/morris-init.js"></script>--%>
+
+    <!--  Peity -->
+    <%--    <script src="../assets/js/lib/peitychart/jquery.peity.min.js"></script>
+    <script src="../assets/js/lib/peitychart/peitychart.init.js"></script>--%>
+
+    <!--  Sparkline -->
+    <%--    <script src="../assets/js/lib/sparklinechart/jquery.sparkline.min.js"></script>
+    <script src="../assets/js/lib/sparklinechart/sparkline.init.js"></script>--%>
+
+    <!-- Select2 -->
+    <%--    <script src="../assets/js/lib/select2/select2.full.min.js"></script>--%>
+
+    <!--  Validation -->
+    <%--<script src="../assets/js/lib/form-validation/jquery.validate.min.js"></script>
+    <script src="../assets/js/lib/form-validation/jquery.validate-init.js"></script>--%>
+
+    <!--  Circle Progress -->
+    <script src="../assets/js/lib/circle-progress/circle-progress.min.js"></script>
+    <script src="../assets/js/lib/circle-progress/circle-progress-init.js"></script>
+
+    <!--  Vector Map -->
+    <%--    <script src="../assets/js/lib/vector-map/jquery.vmap.js"></script>
+    <script src="../assets/js/lib/vector-map/jquery.vmap.min.js"></script>
+    <script src="../assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
+    <script src="../assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+    <script src="../assets/js/lib/vector-map/country/jquery.vmap.algeria.js"></script>
+    <script src="../assets/js/lib/vector-map/country/jquery.vmap.argentina.js"></script>
+    <script src="../assets/js/lib/vector-map/country/jquery.vmap.brazil.js"></script>
+    <script src="../assets/js/lib/vector-map/country/jquery.vmap.france.js"></script>
+    <script src="../assets/js/lib/vector-map/country/jquery.vmap.germany.js"></script>
+    <script src="../assets/js/lib/vector-map/country/jquery.vmap.greece.js"></script>
+    <script src="../assets/js/lib/vector-map/country/jquery.vmap.iran.js"></script>
+    <script src="../assets/js/lib/vector-map/country/jquery.vmap.iraq.js"></script>
+    <script src="../assets/js/lib/vector-map/country/jquery.vmap.russia.js"></script>
+    <script src="../assets/js/lib/vector-map/country/jquery.vmap.tunisia.js"></script>
+    <script src="../assets/js/lib/vector-map/country/jquery.vmap.europe.js"></script>
+    <script src="../assets/js/lib/vector-map/country/jquery.vmap.usa.js"></script>--%>
+
+    <!--  Simple Weather -->
+    <%--<script src="../assets/js/lib/weather/jquery.simpleWeather.min.js"></script>--%>
+    <%--    <script src="../assets/js/lib/weather/weather-init.js"></script>--%>
+
+    <!--  Owl Carousel -->
+    <%--    <script src="../assets/js/lib/owl-carousel/owl.carousel.min.js"></script>
+    <script src="../assets/js/lib/owl-carousel/owl.carousel-init.js"></script>--%>
+
+    <!--  Calender 2 -->
+    <%--    <script src="../assets/js/lib/calendar-2/moment.latest.min.js"></script>
+    <script src="../assets/js/lib/calendar-2/pignose.calendar.min.js"></script>
+    <script src="../assets/js/lib/calendar-2/pignose.init.js"></script>--%>
+
+
+    <!-- Datatable -->
+    <%--    <script src="../assets/js/lib/data-table/datatables.min.js"></script>--%>
+    <%--<script src="../assets/js/lib/data-table/buttons.dataTables.min.js"></script>--%>
+    <%--    <script src="../assets/js/lib/data-table/dataTables.buttons.min.js"></script>--%>
+    <%--<script src="../assets/js/lib/data-table/buttons.flash.min.js"></script>--%>
+    <script src="../assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="../assets/js/lib/data-table/pdfmake.min.js"></script>
+    <script src="../assets/js/lib/data-table/vfs_fonts.js"></script>
+    <%--<script src="../assets/js/lib/data-table/buttons.html5.min.js"></script>--%>
+    <%--<script src="../assets/js/lib/data-table/buttons.print.min.js"></script>--%>
+    <%--    <script src="../assets/js/lib/data-table/datatables-init.js"></script>--%>
+
+    <!-- JS Grid -->
+    <%--    <script src="../assets/js/lib/jsgrid/db.js"></script>
+    <script src="../assets/js/lib/jsgrid/jsgrid.core.js"></script>
+    <script src="../assets/js/lib/jsgrid/jsgrid.load-indicator.js"></script>
+    <script src="../assets/js/lib/jsgrid/jsgrid.load-strategies.js"></script>
+    <script src="../assets/js/lib/jsgrid/jsgrid.sort-strategies.js"></script>
+    <script src="../assets/js/lib/jsgrid/jsgrid.field.js"></script>
+    <script src="../assets/js/lib/jsgrid/fields/jsgrid.field.text.js"></script>
+    <script src="../assets/js/lib/jsgrid/fields/jsgrid.field.number.js"></script>
+    <script src="../assets/js/lib/jsgrid/fields/jsgrid.field.select.js"></script>
+    <script src="../assets/js/lib/jsgrid/fields/jsgrid.field.checkbox.js"></script>
+    <script src="../assets/js/lib/jsgrid/fields/jsgrid.field.control.js"></script>
+    <script src="../assets/js/lib/jsgrid/jsgrid-init.js"></script>--%>
+
+    <!--  Datamap -->
+    <%--    <script src="../assets/js/lib/datamap/d3.min.js"></script>
+    <script src="../assets/js/lib/datamap/topojson.js"></script>
+    <script src="../assets/js/lib/datamap/datamaps.world.min.js"></script>
+    <script src="../assets/js/lib/datamap/datamap-init.js"></script>--%>
+
+    <!--  Nestable -->
+    <%--    <script src="../assets/js/lib/nestable/jquery.nestable.js"></script>
+    <script src="../assets/js/lib/nestable/nestable.init.js"></script>--%>
+
+    <!--ION Range Slider JS-->
+    <%--    <script src="../assets/js/lib/rangeSlider/ion.rangeSlider.min.js"></script>
+    <script src="../assets/js/lib/rangeSlider/moment.js"></script>
+    <script src="../assets/js/lib/rangeSlider/moment-with-locales.js"></script>
+    <script src="../assets/js/lib/rangeSlider/rangeslider.init.js"></script>--%>
+
+    <!-- Bar Rating-->
+    <%--    <script src="../assets/js/lib/barRating/jquery.barrating.js"></script>
+    <script src="../assets/js/lib/barRating/barRating.init.js"></script>--%>
+
+    <!-- jRate -->
+    <%--    <script src="../assets/js/lib/rating1/jRate.min.js"></script>
+    <script src="../assets/js/lib/rating1/jRate.init.js"></script>--%>
+
+    <!-- Sweet Alert -->
+    <script src="../assets/js/lib/sweetalert/sweetalert.min.js"></script>
+    <%--    <script src="../assets/js/lib/sweetalert/sweetalert.init.js"></script>--%>
+
+    <!-- Toastr -->
+    <script src="../assets/js/lib/toastr/toastr.min.js"></script>
+    <%--<script src="../assets/js/lib/toastr/toastr.init.js"></script>--%>
+
+    <!--  Dashboard 1 -->
+    <%--    <script src="../assets/js/dashboard1.js"></script>
+    <script src="../assets/js/dashboard2.js"></script>--%>
+
+    <script src="../assets/js/lib/select2/select2.full.min.js"></script>
+    <script src="../assetscustom/bootstrap-datetimepicker/js/moment.min.js"></script>
+    <script src="../assetscustom/bootstrap-datetimepicker/js/moment-with-locales.min.js"></script>
+    <script src="../assetscustom/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="../assetscustom/bt1160/bootstrap-table.js"></script>
+    <script src="../assetscustom/bt1160/extensions/fixed-columns/bootstrap-table-fixed-columns.js"></script>
+    <script src="../assetscustom/bt1160/extensions/editable/bootstrap-table-editable.js"></script>
+    <script src="../assetscustom/bt1160/extensions/toolbar/bootstrap-table-toolbar.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.10.21/tableExport.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.10.21/libs/jsPDF/jspdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.10.21/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.19.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
+
+
+            <script type="text/javascript">
+        moment.locale('es');
+        var DateTimePickerConfig = {
+            locale: 'es',
+            format: 'DD/MMM/YYYY',
+            ignoreReadonly: true,
+            showTodayButton: true,
+            showClear: true,
+            showClose: true,
+            tooltips: {
+                today: 'Hoy',
+                clear: 'Limpiar',
+                close: 'Cerrar',
+                selectMonth: 'Seleccione Mes',
+                prevMonth: 'Mes Anterior',
+                nextMonth: 'Siguiente Mes',
+                selectYear: 'Seleccione Año',
+                prevYear: 'Año Anterior',
+                nextYear: 'Siguiente Año',
+                selectDecade: 'Seleccione Decada',
+                prevDecade: 'Decada Anterior',
+                nextDecade: 'Siguiente Decada',
+                prevCentury: 'Anterior Siglo',
+                nextCentury: 'Siglo Siguiente'
+            }
+            };
+            var DateTimeHoraPickerConfig = {
+                locale: 'es',
+                format: 'DD/MMM/YYYY HH:MM',
+                ignoreReadonly: true,
+                showTodayButton: true,
+                showClear: true,
+                showClose: true,
+                tooltips: {
+                    today: 'Hoy',
+                    clear: 'Limpiar',
+                    close: 'Cerrar',
+                    selectMonth: 'Seleccione Mes',
+                    prevMonth: 'Mes Anterior',
+                    nextMonth: 'Siguiente Mes',
+                    selectYear: 'Seleccione Año',
+                    prevYear: 'Año Anterior',
+                    nextYear: 'Siguiente Año',
+                    selectDecade: 'Seleccione Decada',
+                    prevDecade: 'Decada Anterior',
+                    nextDecade: 'Siguiente Decada',
+                    prevCentury: 'Anterior Siglo',
+                    nextCentury: 'Siglo Siguiente'
+                }
+            };
+            </script>
+
+    <script src="../js/helpers/Funciones_Generales.js?<% = Sezzion.codigoSession %>"></script>
+    <script src="../js/helpers/Estandar_Vistas.js"></script>
+
+    <script src="../js/pages/SiteMaster.js?<% = Sezzion.codigoSession %>"></script>
+
+</body>
+</html>

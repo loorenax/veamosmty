@@ -1,0 +1,171 @@
+20220722 05:05:25 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: Entra a cargar
+20220722 05:05:25 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: rutaCarpetaAsignada: ~/UploadedDocuments
+20220722 05:05:25 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: ruta a guardar: C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\UploadedDocuments\5d969c10-c633-42a9-b3c5-c41bb8682afa.xls
+20220722 05:05:26 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:05:26 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:05:28 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:13:33 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: Entra a cargar
+20220722 05:13:33 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: rutaCarpetaAsignada: ~/UploadedDocuments
+20220722 05:13:33 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: ruta a guardar: C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\UploadedDocuments\34bbe101-a0b8-482a-bd9c-2284f2d972dc.xls
+20220722 05:13:33 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:13:33 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:13:34 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:13:39 ImportarAlumnos
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at AdminHimalaya.Data.Alumno.ImportarAlumnos(DataTable _dtImport) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Data\Alumno.cs:line 118
+20220722 05:14:27 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: Entra a cargar
+20220722 05:14:27 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: rutaCarpetaAsignada: ~/UploadedDocuments
+20220722 05:14:27 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: ruta a guardar: C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\UploadedDocuments\58962ce6-b5ee-4846-b587-939b986a6302.xls
+20220722 05:14:27 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:14:27 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:14:28 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:14:28 ImportarAlumnos
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at AdminHimalaya.Data.Alumno.ImportarAlumnos(DataTable _dtImport) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Data\Alumno.cs:line 118
+20220722 05:15:05 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: Entra a cargar
+20220722 05:15:05 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: rutaCarpetaAsignada: ~/UploadedDocuments
+20220722 05:15:05 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: ruta a guardar: C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\UploadedDocuments\72233af7-5486-4256-a1cc-53845a8b2cce.xls
+20220722 05:15:05 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow)
+20220722 05:15:05 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow)
+20220722 05:15:06 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow)
+20220722 05:15:06 ImportarAlumnos
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at AdminHimalaya.Data.Alumno.ImportarAlumnos(DataTable _dtImport)
+20220722 05:24:06 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: Entra a cargar
+20220722 05:24:06 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: rutaCarpetaAsignada: ~/UploadedDocuments
+20220722 05:24:06 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: ruta a guardar: C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\UploadedDocuments\fd5915e6-d6fe-407a-9818-596d0d89cdcf.xls
+20220722 05:24:07 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:24:07 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:24:07 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:29:43 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: Entra a cargar
+20220722 05:29:43 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: rutaCarpetaAsignada: ~/UploadedDocuments
+20220722 05:29:43 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: ruta a guardar: C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\UploadedDocuments\a158b0ee-628f-46d2-997f-9bbdab60621c.xls
+20220722 05:29:43 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:29:43 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:29:44 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:31:44 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: Entra a cargar
+20220722 05:31:44 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: rutaCarpetaAsignada: ~/UploadedDocuments
+20220722 05:31:44 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: ruta a guardar: C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\UploadedDocuments\594cf4c1-108b-4d6b-b3a6-98da37912834.xls
+20220722 05:31:49 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:31:50 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:31:50 GetIncidentReport
+  --> msg: 
+  --> source: System.Data
+  --> stacktrace:    at System.Data.DataRow.set_ItemArray(Object[] value)
+   at AdminHimalaya.Utils.GetIncidentReport(DataSet _dsrow) in C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\Utils.cs:line 242
+20220722 05:44:43 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: Entra a cargar
+20220722 05:44:43 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: rutaCarpetaAsignada: ~/UploadedDocuments
+20220722 05:44:43 System.Web.HttpApplication.IExecutionStep.Execute
+  --> msg: ruta a guardar: C:\Trabajo\Proyectos H\AdminHimalaya\AdminHimalaya\AdminHimalaya\UploadedDocuments\e1bc0e6e-d05a-409c-9435-e3d85d49127f.xls
