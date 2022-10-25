@@ -133,4 +133,3 @@ C:\Trabajo\Proyectos H\veamosmty\Eventos\Eventos\obj\Debug\veamosmty.csproj.Core
 C:\Trabajo\Proyectos H\veamosmty\Eventos\Eventos\obj\Debug\veamosmty.csproj.CopyComplete
 C:\Trabajo\Proyectos H\veamosmty\Eventos\Eventos\obj\Debug\veamosmty.dll
 C:\Trabajo\Proyectos H\veamosmty\Eventos\Eventos\obj\Debug\veamosmty.pdb
-C:\Trabajo\Proyectos H\veamosmty\Eventos\Eventos\obj\Debug\veamosmty.csproj.AssemblyReference.cache

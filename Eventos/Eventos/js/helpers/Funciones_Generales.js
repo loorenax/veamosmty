@@ -13,8 +13,8 @@ var _INDEFINIDO_ = 'undefined';
 var _DEFAULT_OPCION_CMB_ = '<-SELECCIONE->';
 var _DEFAULT_OPCION_CMB_TODOS_ = 'Todos';
 
-var _CLASS_CHECKED_ = `fa fa-check-square`;
-var _CLASS_UNCHECKED_ = `fa fa-square`;
+var _CLASS_CHECKED_ = `fa fa-check-square-o`;
+var _CLASS_UNCHECKED_ = `fa fa-square-o`;
 var _SPINNER_ = '<i class="fa fa-spinner fa-spin"></i>';
 
 

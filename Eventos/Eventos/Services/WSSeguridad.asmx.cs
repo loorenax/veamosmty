@@ -212,5 +212,47 @@ namespace veamosmty.Services
         }
 
 
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public string CheckSession(string Parametros)
+        {
+            string Json_Resultado = string.Empty;
+            MensajeServidor ms = new MensajeServidor();
+
+            try
+            {
+                JavaScriptSerializer deserializar_json = new JavaScriptSerializer();
+                Dictionary<string, string> obj_parametros = deserializar_json.Deserialize<Dictionary<string, string>>(Parametros);
+
+
+
+
+                if (!string.IsNullOrEmpty(Sezzion.idUsuario))
+                {
+                    ms.Estatus = Utils._OK_;
+                }
+                else
+                {
+                    ms.Estatus = Utils._ERROR_;
+                    ms.Mensaje = "No se ha iniciado sesión.";
+                }
+            }
+            catch (Exception Ex)
+            {
+                ms.Estatus = Utils._ERROR_;
+                ms.Mensaje = Ex.Message;
+                Utils.problems(Ex);
+            }
+            finally
+            {
+                Json_Resultado = JsonMapper.ToJson(ms);
+            }
+
+
+            return Json_Resultado;
+
+
+        }
     }
 }

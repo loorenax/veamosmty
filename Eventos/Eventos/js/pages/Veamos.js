@@ -32,8 +32,8 @@ function setTemplateCaptura() {
 
         tag = `
 
-                <div class="card mk-card-seccion">
-                    <div class="card-title mk-card-title"></div>
+                <div class="card">
+                    <div class="card-title">Datos generales del alumno</div>
 
                         <div class="row">
                             <div class="col-sm-12 col-md-6 col-lg-4">
@@ -46,34 +46,48 @@ function setTemplateCaptura() {
                                 ${fg_Template_TextBox_Form_Group('nombreAlumno', '', 'Nombre completo del alumno', `required`)}
                             </div>
                         </div>
-
-                        <div class="row mt-4 mb-2">
-                            <div class="col-12 text-center font-weight-bold mb-2">
-                                Datos de la persona que autoriza
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4 col-lg-3">
+                                ${fg_Template_TextBox_Form_Group('grado', '', 'Grado', ``)}
                             </div>
-                            <div class="col-sm-4 col-md-4 col-lg-2">
-                                ${fg_Template_TextBox_Form_Group('nombrePadre', '', 'Nombre', `required`)}
-                            </div>
-                            <div class="col-sm-4 col-md-4 col-lg-2">
-                                ${fg_Template_TextBox_Form_Group('apellidoPaternoPadre', '', 'Ap. Paterno', ` required`)}
-                            </div>
-                            <div class="col-sm-4 col-md-4 col-lg-2">
-                                ${fg_Template_TextBox_Form_Group('apellidoMaternoPadre', '', 'Ap. Materno', ``)}
-                            </div>
-
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                ${fg_Template_Fecha_Nacimiento()}
-                            </div>
-
-                            <div class="col-sm-4 col-md-4 col-lg-2">
-                                ${fg_Template_TextBox_Form_Group('telefonoContacto', '', 'Teléfono de contacto', `required`)}
-                           </div>
-                            <div class="col-sm-6 col-md-6 col-lg-4">
-                                ${fg_Template_BtnChk_Form_Group('autorizaPrueba', '', 'Al completar este registro, se autoriza el uso de datos personales para información, atención y seguimiento del programa Veamos Monterrey', ``)}
+                            <div class="col-sm-12 col-md-4 col-lg-3">
+                                ${fg_Template_TextBox_Form_Group('grupo', '', 'Grupo', ``)}
                             </div>
 
                         </div>
                 </div>
+
+
+                <div class="card">
+                    <div class="card-title">Datos de la persona que autoriza</div>
+                    <div class="row mt-4 mb-2">
+                        <div class="col-sm-4 col-md-4 col-lg-2">
+                            ${fg_Template_TextBox_Form_Group('nombrePadre', '', 'Primer Nombre', `required`)}
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-2">
+                            ${fg_Template_TextBox_Form_Group('segundoNombrePadre', '', 'Segundo Nombre (en caso de tener)', ``)}
+                        </div>
+
+                        <div class="col-sm-4 col-md-4 col-lg-2">
+                            ${fg_Template_TextBox_Form_Group('apellidoPaternoPadre', '', 'Ap. Paterno', ` required`)}
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-2">
+                            ${fg_Template_TextBox_Form_Group('apellidoMaternoPadre', '', 'Ap. Materno', ``)}
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 col-lg-4">
+                            ${fg_Template_Fecha_Nacimiento()}
+                        </div>
+
+                        <div class="col-sm-4 col-md-4 col-lg-2">
+                            ${fg_Template_TextBox_Form_Group('telefonoContacto', '', 'Teléfono de contacto', `required`)}
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 text-right">
+
+                        </div>
+                    </div>
+                </div>
+
 
               `;
 
@@ -82,9 +96,11 @@ function setTemplateCaptura() {
 
 
         var tagfooter = `
-                            <button id="Btn_Guardar_Captura" type="button" class="btn btn-success mk-btn-footer">Guardar</button>
-                            <button id="Btn_Nuevo_Captura" type="button" class="btn btn-primary mk-btn-footer" hidden>Nuevo</button>
-
+                            <div class="w-100 text-right">
+                                ${fg_Template_BtnChk_Form_Group_V2('autorizaPrueba', '', 'Al completar este registro, se autoriza el uso de datos personales para información, atención y seguimiento del programa Veamos Monterrey', ``)}
+                                <button id="Btn_Guardar_Captura" type="button" class="btn btn-success mk-btn-footer">Guardar</button>
+                                <button id="Btn_Nuevo_Captura" type="button" class="btn btn-primary mk-btn-footer" hidden>Nuevo</button>
+                            </div>
                         `;
 
         var Card_Listado_footer = document.getElementById('Card_Listado_footer');
@@ -119,8 +135,11 @@ document.addEventListener('DOMContentLoaded', function () {
         PAGECONTROLS.controls.BtnChk_autorizaPrueba.addEventListener('click', BtnChk_autorizaPrueba_Click);
 
         $('#Cmb_idColegio').select2();
-        //fg_ChekedUnchecked(PAGECONTROLS.controls.BtnChk_autorizaPrueba, true);
+
         getInit();
+
+
+        limpiarCaptura();
     }
     catch (e) {
         fg_mensaje_problema_tecnico(e);
@@ -191,6 +210,8 @@ function setRegistro() {
                 return
             }
 
+
+            
             var obj_filtros = Object();
             obj_filtros = fg_Get_Object_Control_Valor(PAGECONTROLS.controls.Card_Listado_Body.id);
             obj_filtros.autorizaPrueba = fg_BtnChk_Get_Value(PAGECONTROLS.controls.BtnChk_autorizaPrueba) == 'SI';
@@ -199,6 +220,8 @@ function setRegistro() {
                 + '-' + PAGECONTROLS.controls.Cmb_Fecha_Nacimiento_Mes.value
                 + '-' + PAGECONTROLS.controls.Txt_Fecha_Nacimiento_Anio.value;
 
+            var Btn_Guardar_Captura = document.getElementById('Btn_Guardar_Captura');
+            var icono_inicial = fg_Cambiar_Icono_DOM(Btn_Guardar_Captura, _SPINNER_);
             var ruta = '../Services/WSVeamos.asmx/SetRegistro';
             var $data = JSON.stringify({ 'Parametros': JSON.stringify(obj_filtros) });
 
@@ -211,6 +234,8 @@ function setRegistro() {
                 async: true,
                 cache: false,
                 success: function (datos) {
+
+                    fg_Cambiar_Icono_DOM(Btn_Guardar_Captura, icono_inicial);
 
                     var mensaje_servidor = JSON.parse(datos.d);
 
@@ -235,6 +260,8 @@ function setRegistro() {
 
                 }
                 , error: function (error) {
+
+                    fg_Cambiar_Icono_DOM(Btn_Guardar_Captura, icono_inicial);
                     fg_mensaje_problema_tecnico(error);
                 }
 
@@ -299,6 +326,7 @@ function setInactivarReactivar() {
     }
 }
 function salir() {
+    limpiarCaptura();
     location.href = 'https://veamos.veamosmonterrey.com/';
 }
 
