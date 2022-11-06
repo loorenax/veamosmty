@@ -53,8 +53,14 @@ function setTemplateCaptura() {
                             <div class="col-sm-12 col-md-4 col-lg-3">
                                 ${fg_Template_TextBox_Form_Group('grupo', '', 'Grupo', ``)}
                             </div>
-
                         </div>
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-3 col-lg-1">
+                                ${fg_Template_TextBoxNum_Form_Group('folioRegistro', '', 'Folio Registro', ``)}
+                            </div>
+                        </div>
+
                 </div>
 
 
@@ -100,6 +106,8 @@ function setTemplateCaptura() {
                                 ${fg_Template_BtnChk_Form_Group_V2('autorizaPrueba', '', 'Al completar este registro, se autoriza el uso de datos personales para información, atención y seguimiento del programa Veamos Monterrey', ``)}
                                 <button id="Btn_Guardar_Captura" type="button" class="btn btn-success mk-btn-footer">Guardar</button>
                                 <button id="Btn_Nuevo_Captura" type="button" class="btn btn-primary mk-btn-footer" hidden>Nuevo</button>
+
+                                <div class="w-100 text-center color-dark">Puede ver nuestro Aviso de Privacidad <a class="font-weight-bold color-primary" href="https://veamos.veamosmonterrey.com/aviso-de-privacidad/" target="_blank">haciendo clic aquí</a></div>
                             </div>
                         `;
 

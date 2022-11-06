@@ -8,7 +8,7 @@
         <div hidden>
             <a id="Btn_Descargar_Reporte_Excel_Generado" href="#" target="_blank"></a>
         </div>
-        <div id="Card_Listado" class="card mk-card">
+        <div id="Card_Listado" class="card mk-card ">
             <div class="card-title">
                 <h4>Procesando...</h4>
                 

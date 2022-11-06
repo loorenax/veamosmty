@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Trabajo\Proyectos H\Publicados\veamos</_PublishTargetUrl>
-    <History>True|2022-10-24T22:09:40.2256959Z;True|2022-10-18T22:28:59.4919141-05:00;True|2022-10-18T20:25:43.6388561-05:00;True|2022-10-17T17:14:16.0594143-05:00;True|2022-10-14T00:21:56.2087444-05:00;True|2022-10-13T23:55:33.0452272-05:00;True|2022-10-13T22:53:16.5911251-05:00;True|2022-10-13T21:03:35.9117233-05:00;True|2022-08-05T12:29:03.3436550-05:00;True|2022-08-03T17:32:46.4340410-05:00;True|2022-07-28T13:06:26.3060657-05:00;True|2022-07-22T13:45:06.4109132-05:00;True|2022-07-22T07:31:55.3495892-05:00;True|2022-07-22T04:37:44.8690943-05:00;True|2022-07-22T04:36:15.0422763-05:00;True|2022-07-20T22:37:33.4926745-05:00;True|2022-07-15T16:10:04.5601256-05:00;True|2022-06-29T10:04:34.5530356-05:00;True|2022-06-28T18:37:21.7566590-05:00;False|2022-06-28T18:33:07.1271455-05:00;False|2022-06-28T18:29:44.9616521-05:00;True|2022-06-24T22:56:58.2686100-05:00;False|2022-06-24T22:55:13.7106636-05:00;True|2022-06-24T19:12:27.4488903-05:00;False|2022-06-23T12:49:42.7935920-05:00;True|2022-06-23T11:34:42.0851916-05:00;True|2022-06-22T12:25:51.9167593-05:00;True|2022-06-21T20:56:23.4365563-05:00;True|2022-06-17T14:43:01.0251692-05:00;False|2022-06-17T14:41:42.8144898-05:00;False|2022-06-17T14:38:06.2618572-05:00;False|2022-06-17T14:33:04.1053640-05:00;False|2022-06-17T14:25:56.9892882-05:00;False|2022-06-17T14:24:06.0794307-05:00;False|2022-06-17T14:22:39.3191930-05:00;True|2022-06-10T22:20:31.1592534-05:00;True|2022-06-09T18:32:36.2406914-05:00;</History>
+    <History>True|2022-10-27T04:03:56.5076470Z;False|2022-10-26T23:01:25.0081301-05:00;True|2022-10-26T12:38:16.3141346-05:00;True|2022-10-24T17:09:40.2256959-05:00;True|2022-10-18T22:28:59.4919141-05:00;True|2022-10-18T20:25:43.6388561-05:00;True|2022-10-17T17:14:16.0594143-05:00;True|2022-10-14T00:21:56.2087444-05:00;True|2022-10-13T23:55:33.0452272-05:00;True|2022-10-13T22:53:16.5911251-05:00;True|2022-10-13T21:03:35.9117233-05:00;True|2022-08-05T12:29:03.3436550-05:00;True|2022-08-03T17:32:46.4340410-05:00;True|2022-07-28T13:06:26.3060657-05:00;True|2022-07-22T13:45:06.4109132-05:00;True|2022-07-22T07:31:55.3495892-05:00;True|2022-07-22T04:37:44.8690943-05:00;True|2022-07-22T04:36:15.0422763-05:00;True|2022-07-20T22:37:33.4926745-05:00;True|2022-07-15T16:10:04.5601256-05:00;True|2022-06-29T10:04:34.5530356-05:00;True|2022-06-28T18:37:21.7566590-05:00;False|2022-06-28T18:33:07.1271455-05:00;False|2022-06-28T18:29:44.9616521-05:00;True|2022-06-24T22:56:58.2686100-05:00;False|2022-06-24T22:55:13.7106636-05:00;True|2022-06-24T19:12:27.4488903-05:00;False|2022-06-23T12:49:42.7935920-05:00;True|2022-06-23T11:34:42.0851916-05:00;True|2022-06-22T12:25:51.9167593-05:00;True|2022-06-21T20:56:23.4365563-05:00;True|2022-06-17T14:43:01.0251692-05:00;False|2022-06-17T14:41:42.8144898-05:00;False|2022-06-17T14:38:06.2618572-05:00;False|2022-06-17T14:33:04.1053640-05:00;False|2022-06-17T14:25:56.9892882-05:00;False|2022-06-17T14:24:06.0794307-05:00;False|2022-06-17T14:22:39.3191930-05:00;True|2022-06-10T22:20:31.1592534-05:00;True|2022-06-09T18:32:36.2406914-05:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="assets/.DS_Store">
@@ -2220,10 +2220,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/13/2022 17:25:48</publishTime>
     </File>
     <File Include="bin/veamosmty.dll">
-      <publishTime>10/24/2022 17:09:28</publishTime>
+      <publishTime>10/26/2022 23:03:46</publishTime>
     </File>
     <File Include="bin/veamosmty.pdb">
-      <publishTime>10/24/2022 17:09:28</publishTime>
+      <publishTime>10/26/2022 23:03:46</publishTime>
     </File>
     <File Include="FileUploadHandler.ashx">
       <publishTime>10/13/2022 19:05:40</publishTime>
@@ -2295,7 +2295,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/17/2022 16:59:25</publishTime>
     </File>
     <File Include="js/pages/Veamos.js">
-      <publishTime>10/24/2022 16:58:19</publishTime>
+      <publishTime>10/26/2022 22:47:09</publishTime>
     </File>
     <File Include="paginas/Academias.aspx">
       <publishTime>06/17/2022 15:41:23</publishTime>
@@ -2373,10 +2373,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/17/2022 15:41:34</publishTime>
     </File>
     <File Include="paginas/SiteMaster.Master">
-      <publishTime>10/18/2022 19:43:19</publishTime>
+      <publishTime>10/26/2022 12:33:33</publishTime>
     </File>
     <File Include="paginas/Veamos.aspx">
-      <publishTime>10/13/2022 20:10:02</publishTime>
+      <publishTime>10/26/2022 12:36:14</publishTime>
     </File>
     <File Include="plantillas/HuskyPassCiclo20212022.docx">
       <publishTime>06/28/2022 13:37:26</publishTime>
@@ -2400,7 +2400,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/21/2022 19:39:44</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>10/24/2022 17:09:30</publishTime>
+      <publishTime>10/26/2022 23:03:48</publishTime>
     </File>
     <File Include="Services/WSAlumnos.asmx">
       <publishTime>06/14/2022 12:35:45</publishTime>

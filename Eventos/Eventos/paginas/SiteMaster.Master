@@ -220,7 +220,6 @@
         @media only screen and (min-width: 580px) {
             .mk-btn-footer {
                 width:200px;
-                float:right;
                 text-align:center;
             }
         }
